@@ -18,7 +18,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('posts', PostController::class)->middleware('auth');
+
+Route::middleware(['auth', 'role:admin'])->group(function() {
+    Route::resource('posts', PostController::class);
+});
 
 
 
