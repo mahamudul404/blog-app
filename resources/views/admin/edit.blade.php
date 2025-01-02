@@ -7,6 +7,13 @@
                 class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
                 Back
             </a>
+
+            @if (session('error'))
+                <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+                    {{ session('error') }}
+                </div>
+            @endif
+
         </div>
         <div class="bg-gray-800 shadow-md rounded my-6">
             <form action="{{ route('admin.update', $post->id) }}" method="POST" class="p-6">
