@@ -5,11 +5,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('welcome');
 });
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('home');
 
 Route::middleware('auth')->group(function () {
@@ -19,8 +19,8 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::middleware(['auth', 'role:admin'])->group(function() {
-    Route::resource('posts', PostController::class);
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('admin', PostController::class);
 });
 
 
