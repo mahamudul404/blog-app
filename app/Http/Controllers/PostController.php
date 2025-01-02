@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class PostController extends Controller
 {
@@ -40,7 +41,9 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        return redirect()->route('admin.index')->with('success', 'Post created successfully.');
+        
+
+        return redirect()->route('admin.index');
     }
 
     /**
