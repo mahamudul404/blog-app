@@ -3,10 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +20,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::resource('admin', PostController::class);
 });
 
+Route::get('/posts', [UserController::class, 'posts'])->name('posts');
 
 
 
