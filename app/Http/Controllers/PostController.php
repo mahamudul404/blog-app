@@ -77,7 +77,9 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        return redirect()->route('admin.index')->with('success', 'Post updated successfully.');
+        toastr()->success('Post updated successfully.');
+
+        return redirect()->route('admin.index');
     }
 
     /**
@@ -88,6 +90,8 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->delete();
 
-        return redirect()->route('admin.index')->with('success', 'Post deleted successfully.');
+        toastr()->success('Post deleted successfully.');
+
+        return redirect()->route('admin.index');
     }
 }
