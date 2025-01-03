@@ -25,21 +25,6 @@
     </div>
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            @if (session('message'))
-                toastr.options = {
-                    "closeButton": true,
-                    "progressBar": true,
-                    "positionClass": "toast-top-right",
-                    "timeOut": "3000",
-                };
-                toastr.{{ session('alert-type', 'info') }}("{{ session('message') }}");
-            @endif
-        });
-    </script>
-
-
 </body>
 
 </html>

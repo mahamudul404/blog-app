@@ -40,9 +40,7 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        session()->flash('message', 'Post created successfully!');
-        session()->flash('alert-type', 'success');
-
+        toastr()->success('Post created successfully.');
 
         return redirect()->route('admin.index');
     }

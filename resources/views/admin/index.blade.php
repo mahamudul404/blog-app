@@ -9,9 +9,6 @@
             </a>
         </div>
 
-      
-
-
         <div class="bg-gray-800 shadow-md rounded my-6">
             <table class="min-w-full table-auto">
                 <thead>
