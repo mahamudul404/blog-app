@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Tailwind CSS (make sure you have included Tailwind CSS in your project) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    @vite('resources/css/app.css')
 </head>
 
 <body class="bg-gray-50">
     {{-- create a good div content go for the middle and good  --}}
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black">
+    <div
+        class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-r from-gray-800 via-gray-900 to-black">
 
-    
+
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-8 bg-gray-900 shadow-2xl rounded-lg">
             <h2 class="text-3xl font-extrabold text-white mb-4 text-center">

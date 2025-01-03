@@ -4,7 +4,7 @@
         <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
             {{ session('error') }}
         </div>
-    @endif
+    @endif  
 
     <form action="{{ route('admin.store') }}" method="POST" class="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md">
         @csrf

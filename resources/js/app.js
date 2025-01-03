@@ -1,6 +1,9 @@
-import './bootstrap';
+import "./bootstrap";
 
-import Alpine from 'alpinejs';
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
+import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 

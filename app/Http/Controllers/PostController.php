@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Brian2694\Toastr\Facades\Toastr;
 
 class PostController extends Controller
 {
@@ -14,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view ('admin.index', compact('posts'));
+        return view('admin.index', compact('posts'));
     }
 
     /**
@@ -22,8 +21,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        
-        return view ('admin.create');
+
+        return view('admin.create');
     }
 
     /**
@@ -41,7 +40,9 @@ class PostController extends Controller
         $post->content = $request->input('content');
         $post->save();
 
-        
+        session()->flash('message', 'Post created successfully!');
+        session()->flash('alert-type', 'success');
+
 
         return redirect()->route('admin.index');
     }
@@ -60,7 +61,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::find($id);
-        return view ('admin.edit', compact('post'));
+        return view('admin.edit', compact('post'));
     }
 
     /**
